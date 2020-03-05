@@ -1,49 +1,48 @@
-# Project Overview
+🐼  
+![panda](https://res.cloudinary.com/myraileen/image/upload/v1583368547/panda_p2ihut.gif)
 
+# Project Overview
+This project delivers an app using React. 
 
 ## Project Description
 
 This app will show details about a TV show:
-* as a fan of 'xyz' TV show: I want to look-up the cast members of the show. 
-* as a fan of 'xyz' TV show: I want to see the show's seasons and episodes.
+* as a tv viewer, I want to find out about a show's seasons and episodes.
+* as a tv viewer, I want to find out about cast members on shows I watch. 
+* as a tv viewer, I want to give ratings to the shows I watch.
 
 ## Project Links
 
-- [https://github.com/myraileen/XXXX]()
-- [deployment]()
+- [Repository](https://github.com/myraileen/GA-SEI-TV)
+- [Deployment]()
 
 ## Wireframes
 
 - [wireframes]()
 - [react architecture]()
 
-
-
-Define the the React components and the architectural design of your app.
-
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
 #### MVP
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+- Consume data from [TMDb api](https://www.themoviedb.org/documentation/api)
+- Render TV Show, cast and episode data in the app
+- Allow user to interact with app content to see more details about a show, actor or episode.
 
 #### PostMVP EXAMPLE
 
-- Add localStorage or firebase for storage
+- Add localStorage or firebase for storage and enable user to rate or 'favorite' shows and actors.
 
 ## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
+Based on the initial logic defined in the previous sections following is a breakdown of stateless/stateful components. 
 
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
 | Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| Search | This will take user's input to return a list of shows (by show name, actor, genre or year?) | 
+| List | This will display a list of shows (using search input value) | 
+|  > Episodes | This will take user's input to return a list of show episodes | 
+|  > Cast | This will return a list of a show's main cast members | 
+| Rater | This will save user's personal rating of the show using local storage (Post MVP) | 
+
 
 ## Time Frames
 
@@ -51,12 +50,21 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Planning | H | 10hrs| 4hrs | 4hrs |
+| Working with API | H | 10hrs| 8hrs | 8hrs |
+| Adding Components | H | 4hrs| hrs | hrs |
+| Component Integration | H | 20hrs| hrs | hrs |
+| Testing | H | 1hrs| hrs | hrs |
+| Quality Check | H | 1hrs| hrs | hrs |
+| Deploy | H | 1hrs| hrs | hrs |
+| Verify Deployment | H | 1hrs| hrs | hrs |
+| Total | H | hrs| hrs | hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+ Supporting libraries and thier role in the project:
+ * ReactStrap
+ * [TMDb api](https://www.themoviedb.org/documentation/api)
+ * Axios
 
 ## Code Snippet
 
@@ -69,8 +77,9 @@ function reverse(string) {
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+**ISSUE #1** Opened 2020-03-05: API documentation says session id's need to be created with an auth token... I've been testig the API in Postman... and not sure if I need session ID to fully use the API in my app.  
+**RESOLUTION** (open item - need to test api in react app once created)  
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ISSUE #2** Opened 2020-03-05: I don't know how to protect my API key... it was covered as a class lab/lesson as bonus, but I didn't cover this topic.  
+**RESOLUTION** (open item - need to find the guidance for how to protect api key instead of having it stored in the source code.)  
+
