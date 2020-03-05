@@ -38,8 +38,7 @@ Based on the initial logic defined in the previous sections following is a break
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
 | Home | This will render the header and include breadcrumbs | 
-| Search | This will take user's input to return a list of shows (by show name, actor, genre or year?) | 
-| > Star List | This will display a list of actors (by search criteria) | 
+| Search | This will take user's input to return a list of shows (by show or name... or selection from most popular) | 
 | > Show List | This will display a list of shows (by search criteria)  | 
 | >> Profile | This will return a star's profile | 
 | >> Show Details | This will return show overview (with cast... that can be linked to the profile) | 
