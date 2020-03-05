@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
+import ShowDetails from "../ShowDetails/ShowDetails";
+
 const key = "7fc98cab119f0b52ff0a2ed5e86b06ea";
 
 class Search extends Component {
@@ -9,7 +11,8 @@ class Search extends Component {
     this.state = {
       // searchType: this.props.showSearch : search by 'show' or by 'star'
       searchType: "show",
-      list: []
+      list: [],
+      selection: ""
     };
   }
 
@@ -36,25 +39,31 @@ class Search extends Component {
     this.getPopularShows();
   }
 
-  handleClick(event) {
-    console.log("click");
+  handleClick(item) {
+    console.log(item);
+    this.setState({
+      selection: item
+    });
+    console.log(this.state.item);
   }
 
   render() {
-
     //get list of popular shows
     return (
-      <ul
-        style={{ listStyleType: "none" }}
-        className={`${this.state.searchType} selections`}
-      >
-        {this.state.list &&
-          this.state.list.map((item, index) => {
-            return <li key={index} onClick={() => this.handleClick(item)}>
-              {item.name}
-            </li>;
-          })}
-      </ul>
+      <>
+        <ul
+          style={{ listStyleType: "none" }}
+          className={`${this.state.searchType} selections`}
+        >
+          {this.state.list &&
+            this.state.list.map((item, index) => (
+              <li key={index} onClick={() => this.handleClick(item)}>
+                {item.name}
+              </li>
+            ))}
+        </ul>
+        <ShowDetails />
+      </>
     );
   }
 }
