@@ -36,12 +36,16 @@ Based on the initial logic defined in the previous sections following is a break
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
+| Home | This will render the header and include breadcrumbs | 
 | Search | This will take user's input to return a list of shows (by show name, actor, genre or year?) | 
-| List | This will display a list of shows (using search input value) | 
-|  > Episodes | This will take user's input to return a list of show episodes | 
-|  > Cast | This will return a list of a show's main cast members | 
-| Rater | This will save user's personal rating of the show using local storage (Post MVP) | 
+| > Star List | This will display a list of actors (by search criteria) | 
+| > Show List | This will display a list of shows (by search criteria)  | 
+| >> Profile | This will return a star's profile | 
+| >> Show Details | This will return show overview (with cast... that can be linked to the profile) | 
+| >>> _Episodes_ | This will display a list of show episodes (by picked show) | 
+| _Rater_ | This will save user's personal rating of the show using local storage (Post MVP) | 
+
+_Hold Episodes and Rater components for a 'Gold' version_
 
 
 ## Time Frames
