@@ -18,7 +18,8 @@ This app will show details about a TV show:
 ## Wireframes
 
 - [wireframes]()
-- [react architecture](https://res.cloudinary.com/myraileen/image/upload/v1583382781/20200304_223023_resized_t9tvbk.jpg)
+- React architecture  
+  ![react architecture](https://res.cloudinary.com/myraileen/image/upload/v1583386664/20200304_233648_resized_soteyw.jpg)
 
 #### MVP
 - Consume data from [TMDb api](https://www.themoviedb.org/documentation/api)
