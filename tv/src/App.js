@@ -4,6 +4,7 @@ import React, { Component } from "react";
 //lib dependencies
 import "./App.css";
 import Home from "./components/Home/Home";
+import Search from "./components/Search/Search"
 
 //app component will be the 'conductor' for all other components in the app.
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Home />
+      <Home />
+      <Search />
       </div>
     );
   }

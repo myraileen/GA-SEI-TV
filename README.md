@@ -17,7 +17,8 @@ This app will show details about a TV show:
 
 ## Wireframes
 
-- [wireframes]()
+- Wireframe
+  ![Wireframes](https://res.cloudinary.com/myraileen/image/upload/v1583418937/20200305_083257_resized_vbarco.jpg)
 - React architecture  
   ![react architecture](https://res.cloudinary.com/myraileen/image/upload/v1583386664/20200304_233648_resized_soteyw.jpg)
 
@@ -58,8 +59,8 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Working with API | H | 10hrs| 8hrs | 8hrs |
 | Adding Components | H | 4hrs| hrs | hrs |
 | Component Integration | H | 20hrs| hrs | hrs |
-| Testing | H | 1hrs| hrs | hrs |
-| Quality Check | H | 1hrs| hrs | hrs |
+| Testing | H | 2hrs| hrs | hrs |
+| Quality Check | H | 2hrs| hrs | hrs |
 | Deploy | H | 1hrs| hrs | hrs |
 | Verify Deployment | H | 1hrs| hrs | hrs |
 | Total | H | hrs| hrs | hrs |
