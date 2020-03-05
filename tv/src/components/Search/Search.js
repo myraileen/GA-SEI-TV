@@ -36,30 +36,26 @@ class Search extends Component {
     this.getPopularShows();
   }
 
+  handleClick(event) {
+    console.log("click");
+  }
+
   render() {
-    console.log(this.state.list);
-    // console.log(this.state.list[0].id);
 
-    const listArray = this.state.list.map((item, index) => {
-      return (
-        <div key={index} className=''>
-          {item}
-        </div>
-      );
-    });
-
-    // const countryArray = this.state.countries.map((country, index) => {
-    //     return (
-    //     <Country country={country} key={index} />
-    //     )
-    //   });
-
-    //get data herek... start with list of popular shows
-    return <div className={`feature ${this.state.searchType}`}>
-        <ul>
-            {/* <li>{listArray}</li> */}
-        </ul>
-    </div>;
+    //get list of popular shows
+    return (
+      <ul
+        style={{ listStyleType: "none" }}
+        className={`${this.state.searchType} selections`}
+      >
+        {this.state.list &&
+          this.state.list.map((item, index) => {
+            return <li key={index} onClick={() => this.handleClick(item)}>
+              {item.name}
+            </li>;
+          })}
+      </ul>
+    );
   }
 }
 
