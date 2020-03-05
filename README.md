@@ -1,5 +1,4 @@
-🐼  
-![panda](https://res.cloudinary.com/myraileen/image/upload/v1583368547/panda_p2ihut.gif)
+ ![panda](https://res.cloudinary.com/myraileen/image/upload/v1583368547/panda_p2ihut.gif)
 
 # Project Overview
 This project delivers an app using React. 
@@ -19,7 +18,7 @@ This app will show details about a TV show:
 ## Wireframes
 
 - [wireframes]()
-- [react architecture]()
+- [react architecture](https://res.cloudinary.com/myraileen/image/upload/v1583382781/20200304_223023_resized_t9tvbk.jpg)
 
 #### MVP
 - Consume data from [TMDb api](https://www.themoviedb.org/documentation/api)
@@ -50,7 +49,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Planning | H | 10hrs| 4hrs | 4hrs |
+| Planning | H | 10hrs| 6hrs | 6hrs |
 | Working with API | H | 10hrs| 8hrs | 8hrs |
 | Adding Components | H | 4hrs| hrs | hrs |
 | Component Integration | H | 20hrs| hrs | hrs |
@@ -62,7 +61,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## Additional Libraries
  Supporting libraries and thier role in the project:
- * ReactStrap
+ * React
  * [TMDb api](https://www.themoviedb.org/documentation/api)
  * Axios
 
