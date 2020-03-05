@@ -17,7 +17,7 @@ This app will show details about a TV show:
 
 ## Wireframes
 
-- Wireframe
+- Wireframe  
   ![Wireframes](https://res.cloudinary.com/myraileen/image/upload/v1583418937/20200305_083257_resized_vbarco.jpg)
 - React architecture  
   ![react architecture](https://res.cloudinary.com/myraileen/image/upload/v1583386664/20200304_233648_resized_soteyw.jpg)
