@@ -33,20 +33,15 @@ header {
   
 }
 
+ul {
+  list-style: none;
+  list-style-position: outside;
+  margin: 1vw;
+  padding:1vw;
+}
+
 a {
   background:inherit;
   color: inherit;
   text-decoration: none;
-  margin: 5px;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }

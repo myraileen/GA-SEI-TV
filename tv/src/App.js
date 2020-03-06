@@ -1,10 +1,15 @@
 //program dependencies
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
+
+import ShowList from "./components/ShowList/ShowList";
+import ShowDetails from "./components/ShowDetails/ShowDetails";
+import StarList from "./components/StarList/StarList";
+import StarProfile from "./components/StarProfile/StarProfile";
 
 //lib dependencies
 import "./App.css";
 import Home from "./components/Home/Home";
-import Search from "./components/Search/Search";
 
 //app component will be the 'conductor' for all other components in the app.
 class App extends Component {
@@ -16,8 +21,25 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Home />
-        <Search starId={this.state.actor} />
+        <header>tv</header>
+        <Route
+          exact
+          path='/'
+          render={props => <Home/>}
+        />
+        {/* clicking a show cascades to two components (passing it's ID): ShowDetails... and Stars(get list of cast) */}
+        <Route
+          exact
+          path='/Show/:id'
+          render={props => <ShowDetails item={props.match.params.id} />}
+        />
+        
+        {/* clicking a Star cascades to two components, (passing their ID) StarProfile... and ShowList */}
+        <Route
+          exact
+          path='/Star/:id'
+          render={props => <StarProfile star={this.state.selection} />}
+        />
       </div>
     );
   }

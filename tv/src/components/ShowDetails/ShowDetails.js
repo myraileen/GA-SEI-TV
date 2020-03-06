@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import StarList from "../StarList/StarList"
 
 class ShowDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showDetails: []
+      showDetails: [],
+      showPoster: ""
     };
   }
 
@@ -20,7 +22,7 @@ class ShowDetails extends Component {
       .then(response => {
         console.log(response);
         this.setState({
-          showDetails: response.data.results
+          showDetails: response.data
         });
       })
       .catch(error => {
@@ -32,27 +34,28 @@ class ShowDetails extends Component {
     this.getShowDetails();
   }
 
-  componentDidUpdate (prevProps) {
-    if (prevProps.item !== this.props.item ) {
-        this.getShowDetails()
+  componentDidUpdate(prevProps) {
+    if (prevProps.item !== this.props.item) {
+      this.getShowDetails();
     }
   }
 
   render() {
-    // showId = () => this.props.item.id
-
-    // console.log(this.state.show)
-
-    // const show = this.props.item;
-    // console.log(show)
-
-    // this.setState=({
-    //     show: this.props.item
-    // })
-
+    console.log(this.state.showDetails);
     return (
       <>
-        <div>Show Details (but this shouldn't show on inital load?)</div>
+        <div>Show Details</div>
+        {this.state.showDetails && (
+          <div>
+            <img
+              className='poster'
+              src={`https://image.tmdb.org/t/p/w500/${this.state.showDetails.poster_path}`}
+            />
+
+            <StarList showId={this.state.showDetails.id} />
+          </div>
+        )}
+        {/* show poster path -> https://image.tmdb.org/t/p/w500/${posterId} */}
         {/* <div>{this.show}</div> */}
       </>
     );

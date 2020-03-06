@@ -7,16 +7,18 @@ class Stars extends Component {
     this.state = {};
   }
 
+  //get cast list by tv show id
   getStars = () => {
+    console.log(this.props)
     Axios({
       method: "GET",
       //trending list//
       //url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${key}`
       //popular list
-      url: `https://api.themoviedb.org/3/tv/44217/credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
+      url: `https://api.themoviedb.org/3/tv/${this.props.showId}/credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
     })
       .then(response => {
-        // console.log(response);
+        console.log(response);
         this.setState({
           list: response.data.cast
         });
@@ -30,8 +32,13 @@ class Stars extends Component {
     this.getStars();
   }
 
-  handleStarClick = (starId) => {
-      console.log(starId)
+  componentDidUpdate(prevProps) {
+    if (prevProps.showId !== this.props.showId) {
+      this.getStars();
+    }
+  }
+
+  handleActorClick = (starId) => {
     this.setState({
       star: starId
     });
@@ -42,8 +49,8 @@ class Stars extends Component {
       <ul>
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <li key={index} onClick={() => this.handleStarClick(item)}>
-              {item.name}
+            <li key={index} onClick={() => this.handleActorClick(item)}>
+              {item.name} as {item.character}
             </li>
           ))}
       </ul>
