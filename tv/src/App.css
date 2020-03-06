@@ -1,7 +1,44 @@
-.App {
-  text-align: center;
+* {
+  border: 1px solid rgb(196, 193, 193);
+  background: rgb(87, 87, 87);
+  color: white;
 }
 
+.App {
+  display: grid;
+}
+
+.breadcrumbs {
+  font-size: small;
+  font-style: italic;
+}
+
+header {
+  font-size: 10vw;
+  color: white;
+}
+
+.selections {
+  list-style-position: outside;
+  list-style-type: none;
+  padding: 0px;
+}
+.selections  li {
+  margin: 2px;
+  background: rgb(196, 211, 186);
+  color: black;
+  box-shadow: 10px 5px 5px grey;
+  padding: 4px;
+  border-radius: 10px;
+  
+}
+
+a {
+  background:inherit;
+  color: inherit;
+  text-decoration: none;
+  margin: 5px;
+}
 
 .App-header {
   background-color: #282c34;

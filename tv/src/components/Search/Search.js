@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router";
 import Axios from "axios";
+import { Link, Route } from "react-router-dom";
 
 import ShowDetails from "../ShowDetails/ShowDetails";
+import Stars from "../Stars/Stars";
+import ShowList from "../ShowList/ShowList"
+// import SearchHook from "./Functions/Functions"
 
 const key = "7fc98cab119f0b52ff0a2ed5e86b06ea";
 
@@ -12,7 +17,7 @@ class Search extends Component {
       // searchType: this.props.showSearch : search by 'show' or by 'star'
       searchType: "show",
       list: [],
-      selection: ""
+      selection: null
     };
   }
 
@@ -22,7 +27,7 @@ class Search extends Component {
       //trending list//
       //url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${key}`
       //popular list
-      url: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`
+      url: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
     })
       .then(response => {
         // console.log(response.data.results);
@@ -39,30 +44,37 @@ class Search extends Component {
     this.getPopularShows();
   }
 
-  handleClick(item) {
-    console.log(item);
-    this.setState({
-      selection: item
-    });
-    console.log(this.state.item);
-  }
+  // handleClick = item => {
+  //   // console.log(item);
+  //   this.setState({
+  //     selection: { item }
+  //   });
+    // console.log(this.state.selection);
+  // };
 
   render() {
-    //get list of popular shows
     return (
       <>
-        <ul
-          style={{ listStyleType: "none" }}
-          className={`${this.state.searchType} selections`}
-        >
-          {this.state.list &&
-            this.state.list.map((item, index) => (
-              <li key={index} onClick={() => this.handleClick(item)}>
-                {item.name}
-              </li>
-            ))}
-        </ul>
-        <ShowDetails />
+        <Route
+          exact
+          path='/'
+          render={props => <ShowList list={this.state.list} />}
+        />
+        <Route
+          exact
+          path='/Show/:id'
+          render={props => <ShowDetails item={props.match.params.id} />}
+        />
+         <Route
+          exact
+          path='/Actor'
+          render={props => <Stars star={this.state.selection} />}
+        />
+       
+
+        }{/* short circuit evaluation...  */}
+        {/* {this.state.selection && <ShowDetails item={this.state.selection} />}
+        {this.state.selection && <Stars star={this.state.selection} />} */}
       </>
     );
   }

@@ -7,7 +7,10 @@ class Home extends Component {
     }
     render() { 
         return ( 
+            <>
             <header>Home</header>
+            {/* <p className='breadcrumbs'>Home / ... / ... / (import Link/Router... I want browswer back button to work.) </p> */}
+            </>
          );
     }
 }

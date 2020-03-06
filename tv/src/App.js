@@ -4,7 +4,7 @@ import React, { Component } from "react";
 //lib dependencies
 import "./App.css";
 import Home from "./components/Home/Home";
-import Search from "./components/Search/Search"
+import Search from "./components/Search/Search";
 
 //app component will be the 'conductor' for all other components in the app.
 class App extends Component {
@@ -12,11 +12,12 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div className='App'>
-      <Home />
-      <Search />
+        <Home />
+        <Search starId={this.state.actor} />
       </div>
     );
   }
