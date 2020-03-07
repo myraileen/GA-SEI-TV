@@ -2,9 +2,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
-import ShowList from "./components/ShowList/ShowList";
 import ShowDetails from "./components/ShowDetails/ShowDetails";
-import StarList from "./components/StarList/StarList";
 import StarProfile from "./components/StarProfile/StarProfile";
 
 //lib dependencies
@@ -21,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <header>tv</header>
+        <header>click tv</header>
         <Route
           exact
           path='/'
@@ -38,7 +36,7 @@ class App extends Component {
         <Route
           exact
           path='/Star/:id'
-          render={props => <StarProfile star={this.state.selection} />}
+          render={props => <StarProfile item={props.match.params.id} />}
         />
       </div>
     );

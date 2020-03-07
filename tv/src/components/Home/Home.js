@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-// import SearchHook from "./Functions/Functions"
 
 const key = "7fc98cab119f0b52ff0a2ed5e86b06ea";
 
@@ -39,14 +38,6 @@ class Home extends Component {
     this.getPopularShows();
   }
 
-  // handleClick = item => {
-  //   // console.log(item);
-  //   this.setState({
-  //     selection: { item }
-  //   });
-  // console.log(this.state.selection);
-  // };
-
   render() {
     return (
       <>
@@ -54,10 +45,6 @@ class Home extends Component {
           this.state.list.map((show, index) => (
             <Link to={`/Show/${show.id}`} key={index}>{show.name}</Link>
           ))}
-        {/* //there is an initial 'popular shows' that loads first. then it should 'disappear' after one show is clicked. */}
-        }{/* short circuit evaluation...  */}
-        {/* {this.state.selection && <ShowDetails item={this.state.selection} />}
-        {this.state.selection && <Stars star={this.state.selection} />} */}
       </>
     );
   }

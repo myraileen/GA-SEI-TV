@@ -14,13 +14,9 @@ class ShowDetails extends Component {
   getShowDetails = () => {
     Axios({
       method: "GET",
-      //trending list//
-      //url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${key}`
-      //popular list
       url: `https://api.themoviedb.org/3/tv/${this.props.item}?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US&append_to_response=images,videos`
     })
       .then(response => {
-        console.log(response);
         this.setState({
           showDetails: response.data
         });
@@ -41,7 +37,6 @@ class ShowDetails extends Component {
   }
 
   render() {
-    console.log(this.state.showDetails);
     return (
       <>
         <div>Show Details</div>
@@ -49,6 +44,7 @@ class ShowDetails extends Component {
           <div>
             <img
               className='poster'
+              alt='poster'
               src={`https://image.tmdb.org/t/p/w500/${this.state.showDetails.poster_path}`}
             />
 

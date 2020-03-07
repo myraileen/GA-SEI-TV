@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 
 class Stars extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Stars extends Component {
 
   //get cast list by tv show id
   getStars = () => {
-    console.log(this.props)
+    console.log(this.props);
     Axios({
       method: "GET",
       //trending list//
@@ -38,22 +39,29 @@ class Stars extends Component {
     }
   }
 
-  handleActorClick = (starId) => {
-    this.setState({
-      star: starId
-    });
+  handleStarClick = item => {
+    console.log("click");
   };
 
   render() {
     return (
-      <ul>
+      // <ul>
+      //   {this.state.list &&
+      //     this.state.list.map((item, index) => (
+      //       <li key={index} onClick={() => this.handleStarClick(item)}>
+      //         {item.name}
+      //       </li>
+      //     ))}
+      // </ul>
+
+      <>
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <li key={index} onClick={() => this.handleActorClick(item)}>
+            <Link to={`/Star/${item.id}`} key={index}>
               {item.name} as {item.character}
-            </li>
+            </Link>
           ))}
-      </ul>
+      </>
     );
   }
 }
