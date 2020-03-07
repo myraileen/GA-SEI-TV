@@ -13,9 +13,6 @@ class Stars extends Component {
     console.log(this.props);
     Axios({
       method: "GET",
-      //trending list//
-      //url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${key}`
-      //popular list
       url: `https://api.themoviedb.org/3/tv/${this.props.showId}/credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
     })
       .then(response => {

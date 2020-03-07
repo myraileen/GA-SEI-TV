@@ -44,15 +44,13 @@ class ShowDetails extends Component {
           <div>
             <img
               className='poster'
-              alt='poster'
+              alt={this.state.showDetails.name}
               src={`https://image.tmdb.org/t/p/w500/${this.state.showDetails.poster_path}`}
             />
 
             <StarList showId={this.state.showDetails.id} />
           </div>
         )}
-        {/* show poster path -> https://image.tmdb.org/t/p/w500/${posterId} */}
-        {/* <div>{this.show}</div> */}
       </>
     );
   }

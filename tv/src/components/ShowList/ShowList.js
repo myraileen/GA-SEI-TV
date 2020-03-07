@@ -8,16 +8,16 @@ class ShowList extends Component {
     this.state = {};
   }
 
-  getShowsbyStar = () => {
+  //get show list by star id
+  getShows = () => {
     Axios({
       method: "GET",
-      url: `https://api.themoviedb.org/3/person/26723/tv_credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
+      url: `https://api.themoviedb.org/3/person/${this.props.starId}/tv_credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
     })
-
       .then(response => {
-        console.log(response);
+        console.log(response.data);
         this.setState({
-          list: response.data.results
+          list: response.data.cast
         });
       })
       .catch(error => {
@@ -25,19 +25,27 @@ class ShowList extends Component {
       });
   };
 
+  componentDidMount() {
+    this.getShows();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.starId !== this.props.starId) {
+      this.getShows();
+    }
+  }
 
   render() {
     return (
-<>
-      
-      <ul className={`${this.state.searchType} selections`}>shows by star
-        {this.props.list &&
-          this.props.list.map((item, index) => (
-            <li key={index}>
-              <Link to={`/Show/${item.id}`}>{item.name}</Link>
-            </li>
+
+      <>
+        {this.state.list &&
+          this.state.list.map((item, index) => (
+            <Link to={`/Show/${item.id}`} key={index}>
+              {item.name}
+            </Link>
           ))}
-      </ul></>
+      </>
     );
   }
 }
