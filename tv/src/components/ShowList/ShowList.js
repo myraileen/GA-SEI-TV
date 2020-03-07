@@ -37,15 +37,16 @@ class ShowList extends Component {
 
   render() {
     return (
-
-      <>
+      <ul>
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <Link to={`/Show/${item.id}`} key={index}>
-              {item.name}
-            </Link>
+            <li>
+              <Link to={`/Show/${item.id}`} key={index}>
+                {item.name}
+              </Link>
+            </li>
           ))}
-      </>
+      </ul>
     );
   }
 }

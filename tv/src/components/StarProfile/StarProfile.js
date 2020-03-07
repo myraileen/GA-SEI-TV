@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import ShowList from "../ShowList/ShowList"
+import ShowList from "../ShowList/ShowList";
 
 class StarProfile extends Component {
   constructor(props) {
@@ -36,23 +36,22 @@ class StarProfile extends Component {
     }
   }
 
-  render() { 
+  render() {
     return (
-     
       <>
-        <div>{this.state.starProfile.name}</div>
-        {this.state.starProfile && (
-          <div>
+        <section className='feature'>
+          <h2>{this.state.starProfile.name}</h2>
+          {this.state.starProfile && (
             <img
               className='poster'
               alt={this.state.starProfile.name}
               src={`https://image.tmdb.org/t/p/w500/${this.state.starProfile.profile_path}`}
             />
-
-{/* showlist by star */}
-            <ShowList starId={this.state.starProfile.id} />
-          </div>
-        )}
+          )}
+        </section>
+        <section className='selections'>
+          <ShowList starId={this.state.starProfile.id} />
+        </section>
       </>
     );
   }

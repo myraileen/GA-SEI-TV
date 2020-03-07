@@ -1,6 +1,6 @@
 //program dependencies
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
 import ShowDetails from "./components/ShowDetails/ShowDetails";
 import StarProfile from "./components/StarProfile/StarProfile";
@@ -19,7 +19,9 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <header>click tv</header>
+        <Link to={`/`} >
+              <header>click tv</header>
+            </Link>
         <Route
           exact
           path='/'

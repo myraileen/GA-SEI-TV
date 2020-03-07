@@ -42,23 +42,17 @@ class Stars extends Component {
 
   render() {
     return (
-      // <ul>
-      //   {this.state.list &&
-      //     this.state.list.map((item, index) => (
-      //       <li key={index} onClick={() => this.handleStarClick(item)}>
-      //         {item.name}
-      //       </li>
-      //     ))}
-      // </ul>
-
-      <>
+      <ul>
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <Link to={`/Star/${item.id}`} key={index}>
-              {item.name} as {item.character}
-            </Link>
+            <li>
+              {" "}
+              <Link to={`/Star/${item.id}`} key={index}>
+                {item.name}
+              </Link>
+            </li>
           ))}
-      </>
+      </ul>
     );
   }
 }
