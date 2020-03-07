@@ -1,5 +1,3 @@
- ![tv](https://media0.giphy.com/media/9MJ6kl7TBngDumHAre/giphy.gif?cid=ecf05e474d768a29d4eb8bbe3d097ce81333c9dbfb7bf437&rid=giphy.gif)
-
 # Project Overview
 This project delivers an app using React. 
 
