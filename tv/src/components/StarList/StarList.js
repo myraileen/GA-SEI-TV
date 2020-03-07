@@ -46,7 +46,11 @@ class Stars extends Component {
         {this.state.list &&
           this.state.list.map((item, index) => (
             <li>
-              {" "}
+              <img
+                className='poster'
+                alt={item.name}
+                src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
+              />
               <Link to={`/Star/${item.id}`} key={index}>
                 {item.name}
               </Link>
