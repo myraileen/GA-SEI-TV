@@ -2,30 +2,49 @@
   border: 1px solid rgb(196, 193, 193);
   background: rgb(87, 87, 87);
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
   font-family: "Montserrat", sans-serif;
   font-family: "Tinos", serif;
   font-family: "Open Sans", sans-serif;
 }
 
-.breadcrumbs {
-  font-size: small;
-  font-style: italic;
+.App > a {
+  grid-column: 1 / span 2;
+  font-size: 5vw;
+  color: white;
 }
 
-header {
-  font-size: 10vw;
-  color: white;
+.App > .main > .feature > h2 {
+  font-size: 2vw;
+  grid-column: 1 / span 2;
+}
+
+.App > .main > .feature{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 100px;
+  border: solid 1px red;
+}
+.poster {
+  block-size: 100vw;
+}
+
+.App > .main > .selections {
+  grid-column: 2 / span 1;
+  font-size: 2vw;
 }
 
 ul {
   list-style: none;
   list-style-position: outside;
-  margin: 1vw;
-  padding: 1vw;
+  margin: 0px;
+  padding: 0px;
 }
 
 a {

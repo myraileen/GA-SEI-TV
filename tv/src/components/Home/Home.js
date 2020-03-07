@@ -41,6 +41,7 @@ class Home extends Component {
   render() {
     return (
       <>
+      <h2>Trending Shows</h2>
         {this.state.list &&
           this.state.list.map((show, index) => (
             <Link to={`/Show/${show.id}`} key={index}>{show.name}</Link>

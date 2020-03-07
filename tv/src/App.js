@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Link to={`/`} >
-              <header>click tv</header>
+              <div className='header'>click tv</div>
             </Link>
         <Route
           exact
