@@ -40,24 +40,31 @@ class ShowDetails extends Component {
   render() {
     return (
       <div className='main'>
+        <h2>{this.state.showDetails.name}</h2>
         <div className='feature'>
-          <h2>{this.state.showDetails.name}</h2>
           {this.state.showDetails && (
-            <img
-              className='poster'
-              alt={this.state.showDetails.name}
-              src={`https://image.tmdb.org/t/p/w500/${this.state.showDetails.poster_path}`}
-            />
+            <section className='image'>
+              {" "}
+              <img
+                className='poster'
+                alt={this.state.showDetails.name}
+                src={`https://image.tmdb.org/t/p/w500/${this.state.showDetails.poster_path}`}
+              />
+            </section>
           )}
-
-          <p className='overview'>{this.state.showDetails.overview}</p>
-          <p className='details'>
-            {this.state.showDetails.number_of_episodes} episodes over{" "}
-            {this.state.showDetails.number_of_seasons} seasons
-          </p>
-          <p className='popularity'>{this.state.showDetails.popularity} popularity rating</p>
+          <section className='about'>
+            <p className='details'>
+              {this.state.showDetails.number_of_episodes} episodes over{" "}
+              {this.state.showDetails.number_of_seasons} seasons
+            </p>
+            <p className='overview'>{this.state.showDetails.overview}</p>
+            <p className='popularity'>
+              {this.state.showDetails.popularity} popularity rating
+            </p>
+          </section>
         </div>
         <div className='selections'>
+          <h3>Cast</h3>
           <StarList showId={this.state.showDetails.id} />
         </div>
       </div>

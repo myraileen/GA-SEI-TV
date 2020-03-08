@@ -41,12 +41,13 @@ class ShowList extends Component {
         {this.state.list &&
           this.state.list.map((item, index) => (
             <li>
-               <img
-                className='poster'
-                alt={item.name}
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-              />
               <Link to={`/Show/${item.id}`} key={index}>
+                {" "}
+                <img
+                  className='poster'
+                  alt={item.name}
+                  src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                />
                 {item.name}
               </Link>
             </li>
