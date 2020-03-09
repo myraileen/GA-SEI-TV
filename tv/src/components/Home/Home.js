@@ -10,17 +10,11 @@ class Home extends Component {
     super(props);
     this.state = {
       list: null,
-      selection: null,
-      searchType: null,
-      searchText: null
+      searchString: null
     };
   }
 
-  urlVariable = this.props.search
-
-  // this.props.searchType = 'Popular' ? let urlVariable = `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
-
-  getPopularShows = () => {
+  getTrendingShows = () => {
     Axios({
       method: "GET",
       //trending list//
@@ -29,7 +23,39 @@ class Home extends Component {
       //   url: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
     })
       .then(response => {
-        // console.log(response.data.results);
+        this.setState({
+          list: response.data.results
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  getPopularShows = () => {
+    Axios({
+      method: "GET",
+      //popular list//
+      url: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
+    })
+      .then(response => {
+        this.setState({
+          list: response.data.results
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  SearchShows = () => {
+    Axios({
+      method: "GET",
+      //popular list//
+      url: `https://api.themoviedb.org/3/search/tv?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US&query=${this.state.searchString}&page=1&append_to_response=images`
+    })
+      .then(response => {
+        console.log(response);
         this.setState({
           list: response.data.results
         });
@@ -45,15 +71,25 @@ class Home extends Component {
 
   retrieveSearchTerm = (event, searchTerm) => {
     event.preventDefault();
-    console.log(searchTerm)
-  }
+    console.log(searchTerm);
+
+    if (searchTerm === "Trending") {
+      this.getTrendingShows();
+    } else if (searchTerm === "Popular") {
+      this.getPopularShows();
+    } else {
+      this.setState({searchString: searchTerm})
+      this.SearchShows();
+    }
+  };
 
   render() {
+    console.log(this.state.searchString)
     return (
       <div className='main'>
         <h2>Find Shows</h2>
         <div className='feature'>
-          <Search searchTerm={this.retrieveSearchTerm}/>
+          <Search searchTerm={this.retrieveSearchTerm} />
         </div>
         <div className='selections'>
           <h3>Results</h3>

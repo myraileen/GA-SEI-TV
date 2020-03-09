@@ -18,20 +18,23 @@ class Search extends Component {
     event.preventDefault();
     //   console.log('submit')
 
-    this.props.searchTerm(event, this.state);
+    this.props.searchTerm(event, this.state.value)
+    // this.setState({value:""});
   };
 
   handleOptionChange = event => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     if (event.target.value === "Popular") {
-      this.setState({ trendOption: false, popularOption: true });
+      this.setState({ trendOption: false, popularOption: true })
+      this.props.searchTerm(event, 'Popular');
     } else {
-      this.setState({ trendOption: true, popularOption: false });
+      this.setState({ trendOption: true, popularOption: false })
+      this.props.searchTerm(event, 'Trending');;
     }
   };
 
   render() {
-    console.log(this.state.value);
+    // console.log(this.state.value);
     return (
       <div className='searchTools'>
         <form className='search' onSubmit={this.handleSubmit}>
