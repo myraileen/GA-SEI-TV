@@ -1,5 +1,6 @@
+![tv](https://res.cloudinary.com/myraileen/image/upload/v1583796279/giphydog_xfhscg.gif)
 # Project Overview
-This project delivers an app using React. 
+This project delivers an app that was made using React.  
 
 ## Project Description
 
@@ -11,7 +12,7 @@ This app will show details about a TV show:
 ## Project Links
 
 - [Repository](https://github.com/myraileen/GA-SEI-TV)
-- [Deployment]()
+- [Deployment](http://ad-pencil.surge.sh)
 
 ## Wireframes
 
@@ -22,8 +23,8 @@ This app will show details about a TV show:
 
 #### MVP
 - Consume data from [TMDb api](https://www.themoviedb.org/documentation/api)
-- Render TV Show, cast and episode data in the app
-- Allow user to interact with app content to see more details about a show, actor or episode.
+- Get list of TV shows and show cast members 
+- Allow user to interact with app content to see more details about a show, actor (or episode).
 
 #### PostMVP EXAMPLE
 
@@ -47,41 +48,30 @@ _Hold Episodes and Rater components for a 'Gold' version_
 
 
 ## Time Frames
-
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Planning | H | 10hrs| 6hrs | 6hrs |
 | Working with API | H | 10hrs| 8hrs | 8hrs |
-| Adding Components | H | 4hrs| hrs | hrs |
-| Component Integration | H | 20hrs| hrs | hrs |
-| Testing | H | 2hrs| hrs | hrs |
-| Quality Check | H | 2hrs| hrs | hrs |
-| Deploy | H | 1hrs| hrs | hrs |
-| Verify Deployment | H | 1hrs| hrs | hrs |
+| Adding Components | H | 4hrs| 2hrs | 2hrs |
+| Component Integration | H | 20hrs| 20+hrs | 20+hrs |
+| Testing | H | 2hrs| 2hrs | 2hrs |
+| Quality Check | H | 1hrs| 1hrs | 1hrs |
+| Deploy | H | 1hrs| .5hrs | .5hrs |
+| Verify Deployment | H | .1hrs| .1hrs | .1hrs |
 | Total | H | hrs| hrs | hrs |
 
 ## Additional Libraries
  Supporting libraries and thier role in the project:
- * React
+ * React for app development/build
  * [TMDb api](https://www.themoviedb.org/documentation/api)
- * Axios
-
-## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
-
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
+ * Axios to retrieve data from API
 
 ## Issues and Resolutions
 **ISSUE #1** Opened 2020-03-05: API documentation says session id's need to be created with an auth token... I've been testig the API in Postman... and not sure if I need session ID to fully use the API in my app.  
-**RESOLUTION** (open item - need to test api in react app once created)  
+**RESOLUTION** (not an issue)  
 
 **ISSUE #2** Opened 2020-03-05: I don't know how to protect my API key... it was covered as a class lab/lesson as bonus, but I didn't cover this topic.  
-**RESOLUTION** (open item - need to find the guidance for how to protect api key instead of having it stored in the source code.)  
+**RESOLUTION** (API key left exposed)  
 

@@ -48,13 +48,13 @@
   grid-column: 1 span 1;
 }
 .search {
-  padding: 1vh;
-  padding: 1%;
+  /* padding: 1vh;
+  padding: 1%; */
   overflow: hidden;
 }
 .search > div {
   margin-top: 4%;
-  padding: 2vh;
+  /* padding: 2vh; */
 }
 .search > div > label > input {
   background:white;
@@ -69,8 +69,8 @@
 .searchTools {
   border: 2px solid rgb(54, 54, 54);
   grid-column: 1 span 1;
-  padding: 5%;
-  margin: 3%
+  /* padding: 5%;
+  margin: 3% */
 }
 
 .search > div > label > .button {
@@ -89,7 +89,7 @@
 .feature .searchTools > .options {
   justify-items: center;
   border: 2px solid rgb(54, 54, 54);
-  padding-left: 8%;
+  /* padding-left: 8%; */
   padding-top: 7%;
   padding-bottom: 7%;
 }
