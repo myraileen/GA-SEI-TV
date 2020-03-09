@@ -6,6 +6,7 @@ class Search extends Component {
     this.state = {};
   }
 
+
   handleOptionChange = event => {
     console.log("click");
   };
@@ -13,27 +14,36 @@ class Search extends Component {
   render() {
     return (
       <>
-        <form className='search'>Search
-        <div>
+        <form className='search'>
+          Search
+          <div>
             <label>Trending</label>
-            <input name='tv'
+            <input
+              name='tv'
               type='radio'
               value='Trending'
               onChange={this.handleOptionChange}
-            /></div><div>
+            />
+          </div>
+          <div>
             <label> Popular</label>
-            <input name='tv'
+            <input
+              name='tv'
               type='radio'
               value='Popular'
               onChange={this.handleOptionChange}
-            /></div>
-            {/* <label>Genre</label>
+            />
+          </div>
+          {/* <label>Genre</label>
             <input name='tv'
               type='radio'
               value='Genre'
               onChange={this.handleOptionChange}
-            /> */}<label>Search Shows:
-            <input type='text' value={this.props.searchText} /></label>
+            /> */}
+          <label>
+            Search Shows:
+            <input type='text' value={this.props.searchText} />
+          </label>
         </form>
       </>
     );

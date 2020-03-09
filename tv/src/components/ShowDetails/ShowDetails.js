@@ -44,7 +44,6 @@ class ShowDetails extends Component {
         <div className='feature'>
           {this.state.showDetails && (
             <section className='image'>
-              {" "}
               <img
                 className='poster'
                 alt={this.state.showDetails.name}

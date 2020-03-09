@@ -54,7 +54,7 @@ class StarProfile extends Component {
           <section className='about'>
             <p className='overview'>{this.state.starProfile.biography}</p>
             <p classname='details'>
-              Born on {this.state.starProfile.birthday} in{" "}
+              Born on {this.state.starProfile.birthday} in
               {this.state.starProfile.place_of_birth}
             </p>
           </section>
