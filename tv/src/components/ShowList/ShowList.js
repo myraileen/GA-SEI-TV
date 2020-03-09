@@ -40,9 +40,8 @@ class ShowList extends Component {
       <ul>
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <li>
+            <li key={index}>
               <Link to={`/Show/${item.id}`} key={index}>
-                {" "}
                 <img
                   className='poster'
                   alt={item.name}
@@ -58,3 +57,5 @@ class ShowList extends Component {
 }
 
 export default ShowList;
+
+

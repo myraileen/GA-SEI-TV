@@ -6,32 +6,33 @@ class Search extends Component {
     this.state = {};
   }
 
-  handleOptionChange = (event) => {
-    console.log('click')
-  }
+  handleOptionChange = event => {
+    console.log("click");
+  };
 
   render() {
     return (
       <>
         <form className='search'>Search
-        <div className="radio">
-          <label>
-            <input type="radio" value="Trending" checked={true} />
-            Trending
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="Popular" />
-            Popular
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="Genre" />
-            Genre
-          </label>
-        </div>
+            <label>Trending</label>
+            <input name='tv'
+              type='radio'
+              value='Trending'
+              onChange={this.handleOptionChange}
+            />
+            <label> Popular</label>
+            <input name='tv'
+              type='radio'
+              value='Popular'
+              onChange={this.handleOptionChange}
+            />
+            <label>Genre</label>
+            <input name='tv'
+              type='radio'
+              value='Genre'
+              onChange={this.handleOptionChange}
+            />
+            <input type='text' value={searchText} ></input>
         </form>
       </>
     );

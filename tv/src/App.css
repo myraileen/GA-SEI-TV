@@ -15,14 +15,16 @@
   font-family: "Open Sans", sans-serif;
   height: 600px;
 }
-.App > a{
+.App > a {
   text-decoration: none;
+  margin: 0;
+  padding:0;
 }
 
 .header {
-  font-size: xx-large;
+  font-size: x-large;
   grid-column: 1 / span 2;
-  margin-bottom: 1vh;
+  background: rgb(31, 31, 31);
 }
 
 .main {
@@ -32,14 +34,28 @@
   column-gap: 1pc;
 }
 
-.main > h2{
+.main > h2 {
   grid-column: 1 / span 2;
 }
-
-.feature  {
+@media screen and (max-width: 600px) {
+  .feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px blue solid;
+    font-size: medium;
+  }
+  .feature > .image > .poster {
+    border: 1px blue solid;
+    display: flex;
+  }
+  .feature > .overview {
+    border: 1px blue solid;
+    display: flex;
+  }
+}
+.feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-size: medium;
 }
 .feature > .search {
   grid-column: 1 / span 2;
@@ -54,24 +70,32 @@
   grid-column: 2 / span 1;
 }
 
-.selections{
- overflow:scroll;
+.selections {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
 }
 
 .selections > ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   grid-column: 2 / span 1;
   grid-row: 2;
+  text-decoration: none;
+  vertical-align: text-top;
 }
-.selections > ul > li  {
+.selections > ul > li {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-size: small;
+  border: solid 1px blue;
+  vertical-align: text-top;
 }
 
-.selections > ul > li > a> .poster {
-  width: 20%;
-  opacity: 0.7;
+.selections > ul > li > a > .poster {
+  width: 30%;
+  opacity: .8;
 }
 /* 
 

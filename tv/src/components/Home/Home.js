@@ -10,9 +10,13 @@ class Home extends Component {
     super(props);
     this.state = {
       list: null,
-      selection: null
+      selection: null,
+      searchType: null,
+      searchText: null
     };
   }
+
+  // this.props.searchType = 'Popular' ? let urlVariable = `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
 
   getPopularShows = () => {
     Axios({
@@ -49,7 +53,7 @@ class Home extends Component {
           <ul>
             {this.state.list &&
               this.state.list.map((show, index) => (
-                <li>
+                <li key={index}>
                   <Link to={`/Show/${show.id}`} key={index}>
                     <img
                       className='poster'
