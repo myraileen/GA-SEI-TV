@@ -13,7 +13,7 @@
   font-family: "Montserrat", sans-serif;
   font-family: "Tinos", serif;
   font-family: "Open Sans", sans-serif;
-  height: 600px;
+  /* height: 600px; */
 }
 .App > a {
   text-decoration: none;
@@ -29,7 +29,7 @@
 
 .main {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-row: 3;
   column-gap: 1pc;
 }
@@ -41,7 +41,6 @@
   .feature {
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px blue solid;
     font-size: medium;
   }
   .feature > .image > .poster {
@@ -84,18 +83,23 @@
   grid-row: 2;
   text-decoration: none;
   vertical-align: text-top;
+  /* height: 600px; */
+  overflow: scroll;
 }
 .selections > ul > li {
   display: flex;
   flex-direction: column;
-  font-size: small;
+  font-size: x-small;
   border: solid 1px blue;
+  max-height: 200px;
   vertical-align: text-top;
 }
 
 .selections > ul > li > a > .poster {
   width: 30%;
   opacity: .8;
+  max-height: 200px;
+  border: 1px blue solid;
 }
 /* 
 
