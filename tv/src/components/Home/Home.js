@@ -16,6 +16,8 @@ class Home extends Component {
     };
   }
 
+  urlVariable = this.props.search
+
   // this.props.searchType = 'Popular' ? let urlVariable = `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
 
   getPopularShows = () => {
@@ -41,12 +43,17 @@ class Home extends Component {
     this.getPopularShows();
   }
 
+  retrieveSearchTerm = (event, searchTerm) => {
+    event.preventDefault();
+    console.log(searchTerm)
+  }
+
   render() {
     return (
       <div className='main'>
         <h2>Find Shows</h2>
         <div className='feature'>
-          <Search />
+          <Search searchTerm={this.retrieveSearchTerm}/>
         </div>
         <div className='selections'>
           <h3>Results</h3>
