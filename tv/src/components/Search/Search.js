@@ -15,15 +15,10 @@ class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
     this.props.searchTerm(event, this.state.value)
-        // this.forceUpdateHandler();
+    //clear input value
+    this.setState({value:""});
   };
-
-  //tried forceUpdate in a couple place to get the 'search' input to pass on first click.
-  forceUpdateHandler() {
-    this.forceUpdate()
-  }
 
   handleOptionChange = event => {
     if (event.target.value === "Popular") {
