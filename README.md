@@ -1,13 +1,18 @@
 ![tv](https://res.cloudinary.com/myraileen/image/upload/v1583796279/giphydog_xfhscg.gif)
 # Project Overview
-This project delivers an app that was made using React.  
+This project delivers an app that was made using Create React App to satisfy requirements including:
+* React Router usage
+* 6 minimum components in readable file structure
+* Usage of CSS grid or flex layouts
+* appropriate functional and class component usage 
+* deployed via Surge
 
 ## Project Description
 
-This app will show details about a TV show:
-* as a tv viewer, I want to find out about a show's seasons and episodes.
-* as a tv viewer, I want to find out about cast members on shows I watch. 
-* as a tv viewer, I want to give ratings to the shows I watch.
+This app will show details about a TV show to accomodate following user stories:
+* as a tv viewer, I want to lookup TV show information.
+* as a tv viewer, I want to discover more about the cast members for shows I lookup. 
+* as a tv viewer, I want to give ratings to the shows I watch (post-MVP).
 
 ## Project Links
 
