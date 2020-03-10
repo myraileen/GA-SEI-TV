@@ -72,6 +72,7 @@ Based on the initial logic defined in the previous sections following is a break
  * React for app development/build
  * [TMDb api](https://www.themoviedb.org/documentation/api)
  * Axios to retrieve data from API
+ * Google fonts
 
 ## Issues and Resolutions
 **ISSUE #1** Opened 2020-03-05: API documentation says session id's need to be created with an auth token... I've been testig the API in Postman... and not sure if I need session ID to fully use the API in my app.  
