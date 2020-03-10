@@ -1,3 +1,4 @@
+## TV Clicker  
 ![tv](https://res.cloudinary.com/myraileen/image/upload/v1583796279/giphydog_xfhscg.gif)
 # Project Overview
 This project delivers an app that was made using Create React App to satisfy requirements including:
