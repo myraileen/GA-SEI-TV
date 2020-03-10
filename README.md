@@ -29,23 +29,24 @@ This app will show details about a TV show:
 #### PostMVP EXAMPLE
 
 - Add localStorage or firebase for storage and enable user to rate or 'favorite' shows and actors.
+- Add routing pages to view information about seasons and episodes.
 
 ## Components
 Based on the initial logic defined in the previous sections following is a breakdown of stateless/stateful components. 
 
 | Component | Description | 
-| --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Home | This will render the header and include breadcrumbs | 
-| Search | This will take user's input to return a list of shows (by show or name... or selection from most popular) | 
-| > Show List | This will display a list of shows (by search criteria)  | 
-| >> Profile | This will return a star's profile | 
-| >> Show Details | This will return show overview (with cast... that can be linked to the profile) | 
-| >>> _Episodes_ | This will display a list of show episodes (by picked show) | 
-| _Rater_ | This will save user's personal rating of the show using local storage (Post MVP) | 
+| --- | :---: |
+| **App.js** | this component is the routing component. |
+| **Home.js** | this component hosts all API calls with axios, takes form input form Search.js and passes props to ShowDetails.js and StarProfile.js |
+| **Search.js** | this component allows user to interact with what shows to retrieve, passing props to Home.js |
+| **ShowDetails.js** | this component displays api retured show details on the left and a list of the show's cast on the right by passing props to the StarList.js component. |
+| **StarList.js** | child component to ShowDetails.js as mentioned in previous item. |
+| **StarProfile.js** | this component displays api returned actor details on the left and a list of other shows featuring the actor by passing props to the ShowList.js component. |
+| **ShowLis.js** | child component to the StarProfile.js as mentioned in previous item. |
 
-_Hold Episodes and Rater components for a 'Gold' version_
-
+  _Components not pursued with MVP:_
+  * Episodes: component to view show seasons and episode details
+  * Rater: component to enable users to rate movies
 
 ## Time Frames
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
@@ -53,14 +54,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Planning | H | 10hrs| 6hrs | 6hrs |
-| Working with API | H | 10hrs| 8hrs | 8hrs |
+| Working with API | H | 8hrs| 8hrs | 8hrs |
 | Adding Components | H | 4hrs| 2hrs | 2hrs |
-| Component Integration | H | 20hrs| 20+hrs | 20+hrs |
+| Component Integration | H | 12hrs| 12+hrs | 12+hrs |
 | Testing | H | 2hrs| 2hrs | 2hrs |
+| Documentation | H | 1 hr | 1 hr | 1 hr |
 | Quality Check | H | 1hrs| 1hrs | 1hrs |
 | Deploy | H | 1hrs| .5hrs | .5hrs |
 | Verify Deployment | H | .1hrs| .1hrs | .1hrs |
-| Total | H | hrs| hrs | hrs |
 
 ## Additional Libraries
  Supporting libraries and thier role in the project:
@@ -74,4 +75,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 **ISSUE #2** Opened 2020-03-05: I don't know how to protect my API key... it was covered as a class lab/lesson as bonus, but I didn't cover this topic.  
 **RESOLUTION** (API key left exposed)  
+
+**ISSUE #3** Opened 2020-03-09: The submit input in search component is not recognized on first click... a subsequent click is needed to pass the input value to the home component successfully.
+**RESOLUTION** (still open... for demo, will click button twice.)
 
