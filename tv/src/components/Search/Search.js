@@ -17,7 +17,7 @@ class Search extends Component {
     event.preventDefault();
 
     this.props.searchTerm(event, this.state.value)
-        this.forceUpdateHandler();
+        // this.forceUpdateHandler();
   };
 
   //tried forceUpdate in a couple place to get the 'search' input to pass on first click.

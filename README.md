@@ -82,5 +82,5 @@ Based on the initial logic defined in the previous sections following is a break
 **RESOLUTION** (API key left exposed)  
 
 **ISSUE #3** Opened 2020-03-09: The submit input in search component is not recognized on first click... a subsequent click is needed to pass the input value to the home component successfully.
-**RESOLUTION** (still open... for demo, will click button twice.)
+**RESOLUTION** (moved the API call within the function so the string needed in the API call was available.)
 

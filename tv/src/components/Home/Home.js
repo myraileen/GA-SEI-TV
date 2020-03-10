@@ -19,7 +19,7 @@ class Home extends Component {
       method: "GET",
       //trending shows//
       url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${key}`
-      })
+    })
       .then(response => {
         this.setState({
           list: response.data.results
@@ -46,32 +46,16 @@ class Home extends Component {
       });
   };
 
-  SearchShows = () => {
-    Axios({
-      method: "GET",
-      //search//
-      url: `https://api.themoviedb.org/3/search/tv?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US&query=${this.state.searchString}&page=1&append_to_response=images`
-    })
-      .then(response => {
-        this.setState({
-          list: response.data.results
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
   componentDidMount() {
     this.getPopularShows();
   }
 
   forceUpdateHandler() {
-    this.forceUpdate()
+    this.forceUpdate();
   }
 
   retrieveSearchTerm = (event, searchTerm) => {
-    event.preventDefault();
+    console.log(searchTerm);
 
     if (searchTerm === "Trending") {
       this.getTrendingShows();
@@ -81,8 +65,20 @@ class Home extends Component {
       this.setState({
         searchString: searchTerm
       });
-      this.forceUpdateHandler()
-      this.SearchShows();
+
+      Axios({
+        method: "GET",
+        //search//
+        url: `https://api.themoviedb.org/3/search/tv?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US&query=${searchTerm}&page=1&append_to_response=images`
+      })
+        .then(response => {
+          this.setState({
+            list: response.data.results
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   };
 
