@@ -17,11 +17,9 @@ class Home extends Component {
   getTrendingShows = () => {
     Axios({
       method: "GET",
-      //trending list//
+      //trending shows//
       url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${key}`
-      //popular list
-      //   url: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
-    })
+      })
       .then(response => {
         this.setState({
           list: response.data.results
@@ -35,7 +33,7 @@ class Home extends Component {
   getPopularShows = () => {
     Axios({
       method: "GET",
-      //popular list//
+      //popular shows//
       url: `https://api.themoviedb.org/3/discover/tv?api_key=${key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_original_language=en`
     })
       .then(response => {
@@ -51,11 +49,10 @@ class Home extends Component {
   SearchShows = () => {
     Axios({
       method: "GET",
-      //popular list//
+      //search//
       url: `https://api.themoviedb.org/3/search/tv?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US&query=${this.state.searchString}&page=1&append_to_response=images`
     })
       .then(response => {
-        console.log(response);
         this.setState({
           list: response.data.results
         });
@@ -69,22 +66,27 @@ class Home extends Component {
     this.getPopularShows();
   }
 
+  forceUpdateHandler() {
+    this.forceUpdate()
+  }
+
   retrieveSearchTerm = (event, searchTerm) => {
     event.preventDefault();
-    console.log(searchTerm);
 
     if (searchTerm === "Trending") {
       this.getTrendingShows();
     } else if (searchTerm === "Popular") {
       this.getPopularShows();
     } else {
-      this.setState({searchString: searchTerm})
+      this.setState({
+        searchString: searchTerm
+      });
+      this.forceUpdateHandler()
       this.SearchShows();
     }
   };
 
   render() {
-    console.log(this.state.searchString)
     return (
       <div className='main'>
         <h2>Find Shows</h2>

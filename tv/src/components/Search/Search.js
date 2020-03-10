@@ -14,16 +14,18 @@ class Search extends Component {
   };
 
   handleSubmit = event => {
-    //   console.log(this.state.value)
     event.preventDefault();
-    //   console.log('submit')
 
     this.props.searchTerm(event, this.state.value)
+        this.forceUpdateHandler();
     // this.setState({value:""});
   };
 
+  forceUpdateHandler() {
+    this.forceUpdate()
+  }
+
   handleOptionChange = event => {
-    // console.log(event.target.value);
     if (event.target.value === "Popular") {
       this.setState({ trendOption: false, popularOption: true })
       this.props.searchTerm(event, 'Popular');
@@ -34,16 +36,9 @@ class Search extends Component {
   };
 
   render() {
-    // console.log(this.state.value);
     return (
       <div className='searchTools'>
         <form className='search' onSubmit={this.handleSubmit}>
-          {/* <label>Genre</label>
-            <input name='tv'
-              type='radio'
-              value='Genre'
-              onChange={this.handleOptionChange}
-            /> */}
           <div>
             <label>
               Search Shows:

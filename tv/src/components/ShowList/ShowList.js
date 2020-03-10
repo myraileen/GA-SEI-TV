@@ -15,7 +15,6 @@ class ShowList extends Component {
       url: `https://api.themoviedb.org/3/person/${this.props.starId}/tv_credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
     })
       .then(response => {
-        console.log(response.data);
         this.setState({
           list: response.data.cast
         });
@@ -44,7 +43,7 @@ class ShowList extends Component {
               <Link to={`/Show/${item.id}`} key={index}>
                 <img
                   className='poster'
-                  alt={item.name}
+                  alt='poster'
                   src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                 />
                 {item.name}

@@ -45,7 +45,6 @@
 .main > .feature {
   display: grid;
   grid-template-columns: 1fr;
-  grid-column: 1 span 1;
 }
 .search {
   /* padding: 1vh;
@@ -68,9 +67,6 @@
 
 .searchTools {
   border: 2px solid rgb(54, 54, 54);
-  grid-column: 1 span 1;
-  /* padding: 5%;
-  margin: 3% */
 }
 
 .search > div > label > .button {
@@ -143,11 +139,15 @@
   height:auto;
   vertical-align: text-top;
   border: 1px solid rgb(201, 200, 200);
+  text-decoration-line: none;
 }
-
 .selections > ul > li:nth-child(even) {
   background: white;
   background-color: white;
+}
+
+.selections > ul > li > a {
+  text-decoration: none;
 }
 
 .selections > ul > li > a > .poster {

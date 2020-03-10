@@ -10,13 +10,11 @@ class Stars extends Component {
 
   //get cast list by tv show id
   getStars = () => {
-    console.log(this.props);
     Axios({
       method: "GET",
       url: `https://api.themoviedb.org/3/tv/${this.props.showId}/credits?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US`
     })
       .then(response => {
-        console.log(response);
         this.setState({
           list: response.data.cast
         });
@@ -45,11 +43,10 @@ class Stars extends Component {
       <ul>
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <li>
-              
-              <Link to={`/Star/${item.id}`} key={index}><img
+            <li key={index}>
+              <Link to={`/Star/${item.id}`} ><img
                 className='poster'
-                alt={item.name}
+                alt='poster'
                 src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
               />
                 {item.name}

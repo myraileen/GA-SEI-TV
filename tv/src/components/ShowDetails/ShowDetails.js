@@ -17,7 +17,6 @@ class ShowDetails extends Component {
       url: `https://api.themoviedb.org/3/tv/${this.props.item}?api_key=7fc98cab119f0b52ff0a2ed5e86b06ea&language=en-US&append_to_response=images,videos`
     })
       .then(response => {
-        console.log(response.data);
         this.setState({
           showDetails: response.data
         });
